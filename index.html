@@ -10,17 +10,17 @@
     <title>Login - Controle de gastos</title>
 </head>
 
-<body>
+<body class="centralize">
     <form>
         <div class="form-field">
             <div><label>Email</label></div>
-            <input type="email" name="email" id="email" placeholder="seu@email.com" onchange="onChangeEmail()" />
+            <input type="email" name="email" id="email" placeholder="seu@email.com" onchange="onChangeEmail()"/>
             <div class="error" id="email-required-error">Email é obrigatório</div>
             <div class="error" id="email-invalid-error">Email é inválido</div>
         </div>
         <div class="form-field">
             <div><label>Senha</label></div>
-            <input type="password" name="password" id="password" placeholder="Senha" onchange="onChangePassword()" />
+            <input type="password" name="password" id="password" placeholder="Senha" onchange="onChangePassword()"/>
             <div class="error" id="password-required-error">Senha é obrigatória</div>
         </div>
         <div>
@@ -33,28 +33,26 @@
             <button type="button" class="outline" onclick="register()">Registrar</button>
         </div>
     </form>
-    <script src="src/script.js"></script>
-    <script src="src/validations.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.9.4/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.9.4/firebase-auth-compat.js"></script>
-    <script>
-        const firebaseConfig = {
-            apiKey: "AIzaSyB5CiY2RFjt8K27y95yE87cJgyQj800m6w",
-            authDomain: "controle-de-gastos-fab32.firebaseapp.com",
-            projectId: "controle-de-gastos-fab32",
-            storageBucket: "controle-de-gastos-fab32.appspot.com",
-            messagingSenderId: "675218066280",
-            appId: "1:675218066280:web:93156cd0024ac4e70b64dd"
-        };
-        firebase.initializeApp(firebaseConfig);
-        console.log('antes');
-        firebase.auth().signInWithEmailAndPassword("gustavomattos777@gmail.com", "123456").then(response => {
-            console.log('success', response)
-        }).catch(error => {
-            console.log('error', error)
-        });
-        console.log('depois')
-    </script>
 </body>
+
+<script src="src/script.js"></script>
+<script src="src/validations.js"></script>
+<script src="./src/loading.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/9.9.4/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.9.4/firebase-auth-compat.js"></script>
+<script>
+    const firebaseConfig = {
+        apiKey: "AIzaSyB5CiY2RFjt8K27y95yE87cJgyQj800m6w",
+        authDomain: "controle-de-gastos-fab32.firebaseapp.com",
+        projectId: "controle-de-gastos-fab32",
+        storageBucket: "controle-de-gastos-fab32.appspot.com",
+        messagingSenderId: "675218066280",
+        appId: "1:675218066280:web:93156cd0024ac4e70b64dd"
+    };
+    firebase.initializeApp(firebaseConfig);
+
+</script>
+
 
 </html>
