@@ -35,6 +35,17 @@ function register() {
     window.location.href = "src/pages/register/register.html";
 }
 
+function recoverPassword() {
+    showLoading();
+    firebase.auth().sendPasswordResetEmail(form.email().value).then(() => {
+        hideLoading();
+        alert('Email enviado com sucesso');
+    }).catch(error => {
+        hideLoading();
+        alert(getErrorMessage(error));
+    });
+}
+
 function toggleEmailErrors() {
     const email = form.email().value;
     form.emailRequiredError().style.display = email ? "none" : "block";
